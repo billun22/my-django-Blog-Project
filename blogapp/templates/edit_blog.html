@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="create-container">
+    <h2>✏️ Update Post</h2>
+
+    <form method="post" enctype="multipart/form-data" class="create-form">
+        {% csrf_token %}
+
+        <p>
+            {{ form.title.label_tag }}
+            {{ form.title }}
+        </p>
+
+        <p>
+            {{ form.content.label_tag }}
+            {{ form.content }}
+        </p>
+
+        <p>
+            {{ form.publisher.label_tag }}
+            {{ form.publisher }}
+        </p>
+
+        <p>
+            {{ form.image.label_tag }}
+            {{ form.image }}
+        </p>
+
+        <p>
+            {{ form.video.label_tag }}
+            {{ form.video }}
+        </p>
+
+        <div class="create-actions">
+            <button type="submit">Update Post</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

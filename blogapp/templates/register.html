@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% load widget_tweaks %}
+
+{% block content %}
+<div class="register-container">
+    <h2>Register</h2>
+
+    <form method="POST" action="" class="register-form">
+        {% csrf_token %}
+        
+        <div>
+            {{ form.username.label_tag }}
+            {{ form.username }}
+        </div>
+
+        <div>
+            {{ form.email.label_tag }}
+            {{ form.email }}
+        </div>
+
+        <div>
+            {{ form.password1.label_tag }}
+            {{ form.password1 }}
+        </div>
+
+        <div>
+            {{ form.password2.label_tag }}
+            {{ form.password2 }}
+        </div>
+
+        <button type="submit">Create Account</button>
+    </form>
+
+    <p class="login-text">
+        Already have an account? 
+        <a href="{% url 'login' %}">Login</a>
+    </p>
+</div>
+{% endblock %}

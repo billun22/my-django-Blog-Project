@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2> search </h2>
+<form method="get" class="d-flex mb-4 gap-3" >
+    <input type="text" class="form-control me-2" name="search" placeholder="Search posts" value="{{ query }}">
+    <button class="btn btn-primary" type="submit">Search</button>
+
+    {% if query %}
+    <a href="{% url 'index' %}" class="btn btn-primary ml-4">Reset</a>
+    {% endif %}
+</form>
+
+<a href="{% url 'create_post' %}" class="btn btn-success mb-3">Create Post</a>
+
+
+<div class="list-group">
+{% for article in articles %}
+    <a href="{% url 'post_detail' article.slug  %}" class="list-group-item list-group-item-active">
+        <h5 class="mb-1">{{ article.title }}</h5>
+        <p class="mb-1">
+            {{ article.content|truncatechars:100 }}
+        </p>
+        <div class="article-meta">
+            <p>{{article.publisher.username}}</strong>
+            <small class="text-muted">Posted on {{ article.publish_date }}</small>
+        </div>
+        
+    </a>
+<hr>
+{% empty %}
+<p class="text-muted">No blog posts yet!</p>
+{% endfor %}
+</div>
+
+{% endblock %}

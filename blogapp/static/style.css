@@ -1,0 +1,625 @@
+/* ====== Comment Section Styling ====== */
+
+.comment-section {
+    margin-top: 2rem;
+    margin-left: 2rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+/* Header */
+.comment-header {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+/* Individual comment card */
+.comment-card {
+    margin-bottom: 0px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    transition: box-shadow 0.3s ease;
+}
+
+.comment-card:last-child {
+    border-bottom: none;
+}
+
+
+.comment-body {
+    font-size: 0.95rem;
+    color: #444;
+    line-height: 1.5;
+    margin-top: 0.3rem;
+}
+/* Username and date */
+.comment-meta {
+    font-size: 0.85rem;
+    margin-bottom: 0.3rem;
+    color: #666;
+}
+
+.comment-username {
+    font-weight: 600;
+    color: #0077cc;
+    margin-right: 0.5rem;
+}
+
+.comment-date {
+    color: #999;
+    font-style: italic;
+}
+
+/* Empty comment text */
+.no-comments {
+    text-align: center;
+    color: #777;
+    font-size: 0.9rem;
+}
+
+/* Add Comment Form */
+.add-comment {
+    margin-top: 2rem;
+    margin-left: 2rem;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    max-width: 70%;
+}
+
+.add-comment h5 {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.add-comment textarea,
+.add-comment input[type="text"] {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.add-comment button {
+    background: #0077cc;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background 0.3s ease;
+}
+
+.add-comment button:hover {
+    background: #005fa3;
+}
+
+/* ===== Django Form Styling ===== */
+
+/* Style <p> wrapper from form.as_p */
+.add-comment form p {
+    margin-bottom: 1rem;
+}
+
+/* Input fields & textarea */
+.add-comment form input[type="text"],
+.add-comment form input[type="email"],
+.add-comment form input[type="password"],
+.add-comment form textarea {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Focus effect */
+.add-comment form input:focus,
+.add-comment form textarea:focus {
+    border-color: #0077cc;
+    box-shadow: 0 0 5px rgba(0, 119, 204, 0.3);
+}
+
+/* Labels */
+.add-comment form label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.4rem;
+}
+
+/* Error messages */
+.add-comment form .errorlist {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0.5rem 0;
+    color: #d9534f;
+    font-size: 0.85rem;
+}
+
+/* Button (reusing previous style) */
+.add-comment form button {
+    background: #0077cc;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background 0.3s ease;
+}
+
+.add-comment form button:hover {
+    background: #005fa3;
+}
+
+.login-container {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* Heading */
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+/* Django form fields */
+.login-form p {
+    margin-bottom: 1rem;
+}
+
+.login-form label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.3rem;
+}
+
+.login-form input[type="text"],
+.login-form input[type="email"],
+.login-form input[type="password"] {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-form input:focus {
+    border-color: #515f69;
+    box-shadow: 0 0 5px rgba(0, 119, 204, 0.3);
+}
+
+/* Login button */
+.login-form button {
+    width: 100%;
+    background: #212529;
+    color: #fff;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.login-form button:hover {
+    background: #515f69;
+}
+
+.register-text {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.register-text a {
+    color: #0077cc;
+    text-decoration: none;
+    margin-left: 0.3rem;
+}
+
+.register-text a:hover {
+    text-decoration: underline;
+}
+
+.register-container {
+    max-width: 450px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background:#fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.register-container h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+.register-form div {
+    margin-bottom: 1rem;
+}
+
+.register-form label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.3rem;
+}
+
+.register-form input[type="text"],
+.register-form input[type="email"],
+.register-form input[type="password"] {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.register-form input:focus {
+    border-color: #515f69;
+    box-shadow: 0 0 5px rgba(0, 119, 204, 0.3);
+}
+
+.register-form button {
+    width: 100%;
+    background-color: #212529;
+    color: #fff;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+
+}
+
+.register-form button:hover {
+    background: #515f69;
+
+}
+
+.login-text {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.login-text a{
+    text-decoration: none;
+}
+
+.login-text a:hover{
+    text-decoration: underline;
+}
+
+.add-comment {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: #fff;
+    border: none;
+}
+
+.add-comment h5 {
+    margin-bottom: 1rem;
+    color: #333;
+    
+}
+
+.comment-form div {
+    margin-bottom: 1rem;   
+}
+
+.comment-form label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.3rem;
+}
+
+.comment-form textarea {
+    width: 100%;
+    max-height: 6em;   /* about one line */
+    padding: 0.5rem;
+    border: none;
+    border-bottom: 2px solid #ccc; /* looks like a text input */
+    border-radius: 0;
+    font-size: 0.95rem;
+    outline: none;
+    resize: none; /* user can’t drag manually */
+    transition: border-color 0.3s ease;
+}
+
+.comment-form textarea:focus {
+    border-bottom-color: #0077cc;
+}
+
+.comment-form button {
+    background: #022b48;
+    color: #fff;
+    padding: 0.7rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.comment-form button:hover {
+    background: #005fa3;
+}
+
+/* ===== Create Post Page Styling ===== */
+.create-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    margin-left: 2rem;
+    padding: 2rem;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.create-container h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+/* Form fields (same style as register/login) */
+.create-form p {
+    margin-bottom: 1rem;
+}
+
+.create-form label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.3rem;
+}
+
+.create-form input[type="text"],
+.create-form input[type="file"],
+.create-form textarea {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Textarea auto-grow like comment box */
+.create-form textarea {
+    min-height: 2em;
+    resize: none;
+}
+
+.create-form input:focus,
+.create-form textarea:focus {
+    border-color: #0077cc;
+    box-shadow: 0 0 5px rgba(0, 119, 204, 0.3);
+}
+
+/* Action buttons */
+.create-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.create-form input[type="file"] {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+
+.create-actions button {
+    background: #0077cc;
+    color: #fff;
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.create-actions button:hover {
+    background: #005fa3;
+}
+
+/* Cancel link styled like a button */
+.cancel-link {
+    display: inline-block;
+    padding: 0.7rem 1.5rem;
+    background: #ccc;
+    color: #333;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+.cancel-link:hover {
+    background: #999;
+}
+
+.article-meta {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: #6c757d; /* subtle gray */
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* space between publisher and date */
+}
+
+.article-meta p {
+    margin: 0;
+    font-weight: 500; /* slight emphasis on publisher */
+    color: #343a40;   /* darker text for name */
+}
+
+.article-meta small {
+    font-size: 0.85rem;
+    color: #888; /* softer gray */
+}
+
+.comment-reply{
+    padding-left: 2rem;
+}
+
+.post-media {
+    margin: 1rem 0;
+}
+
+.post-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+}
+
+.post-video {
+    max-width: 100%;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+}
+
+.form-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    margin-left: 2rem;
+    padding: 2rem;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.form-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    color: #333;
+}
+
+.update-form p {
+    margin-bottom: 15px;
+}
+
+.update-form label {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+    color: #444;
+}
+
+.update-form input[type="text"],
+.update-form input[type="file"]
+.update-form textarea,
+.update-form select {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #ddd;
+    border-radius: 86x;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.3s ease;
+}
+
+.update-form input:focus,
+.update-form textarea:focus,
+.update-form select:focus {
+    outline: none;
+    border-color: #ffb84d;
+    box-shadow: 0 0 4px rgba(255, 184, 77, 0.4);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background: #ffb84d;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: #e6a73d;
+}
+
+.custom-title {
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.custom-title .publisher {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #6c757d;
+    margin-left: 10px;
+    padding: 2px 8px;
+    border-radius: 12px;
+    display: inline-block;
+    transition: all 0.3s ease;
+    display: inline-block;
+
+}
+
+.custom-title .publisher:hover {
+    background: #e2e6ea;
+    color: #212529;
+}

@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block content %}
+
+<div class="container mt-4">
+    <div class="card mb-4 shadow-sm">
+        <div class="card-body">
+            <h2 class="custom-title">{{ article.title }}<span class="publisher">- {{ article.publisher.username}}</span></h2>
+            <p class="card-text">{{ article.content }}</p>
+
+            {% if article.image %}
+                <div class="post-media">
+                    <img src="{{ article.image.url }}" alt="Post image" class="post-image">
+                </div>
+            {% endif %}
+
+            {% if article.video %}
+                <div class="post-media">
+                    <video controls class="post-video">
+                        <source src="{{ article.video.url }}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            {% endif %}
+
+            <small class="text-muted">Published: {{ article.publish_date }}</small>
+        </div>
+        
+        <div class="card-footer">
+            {% if user.is_authenticated and article.publisher and article.publisher == request.user %}
+                <a href="{% url 'edit_blog' article.slug %}" class="btn btn-warning btn-sm">Edit</a>
+                <a href="{% url 'delete_blog' article.slug %}" class="btn btn-danger btn-sm">Delete</a>
+            {% endif %}
+            <a href="{% url 'index' %}" class="btn btn-secondary btn-sm">Back to Blog</a>
+        </div>
+    </div>
+
+    <div class="comment-section">
+        <div class="comment-header">
+            Comments ({{ comments.count }})
+        </div>
+
+        {% for comment in comments %}
+            <div class="comment-card">
+                <div class="comment-meta">
+                    <span class="comment-username">{{ comment.user.username }}</span>
+                    <span class="comment-date">{{ comment.created_at|date:"M d, Y H:i" }}</span>
+                </div>
+                <p class="comment-body">{{ comment.body }}</p>
+                
+
+                {% if user.is_authenticated %}
+                    <a href="#" class="reply-btn" data-parent="{{ comment.id }}">Reply</a>
+                {% endif %}
+
+                
+                {% for reply in comment.replies.all %}
+                    <div class="comment-reply">
+                        <div class="comment-meta">
+                            <span class="comment-username">{{ reply.user.username }}</span>
+                            <span class="comment-date">{{ reply.created_at|date:"M d, Y H:i" }}</span>
+                        </div>
+                        <p class="comment-body">{{ reply.body }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        {% empty %}
+            <p class="no-comments">No comments yet. Be the first!</p>
+        {% endfor %}
+    </div>
+
+
+    <div class="add-comment">
+        <h5>Add a Comment</h5>
+        {% if user.is_authenticated %}
+        <form method="post" class="comment-form">
+            {% csrf_token %}
+            <div>
+                {{ form.body.label_tag }}
+                {{ form.body|attr:"placeholder: Write your comment here..." }}
+            </div>
+            <input type="hidden" name="parent_id" id="parent_id">
+
+            <button type="submit">Add Comment</button>
+        </form>
+        {% else %}
+        <p><a href="{% url 'login' %}">Login</a> to leave a comment.</p>
+        {% endif %}
+    </div>
+
+</div>
+{% endblock %}
