@@ -9,7 +9,6 @@ class Article(models.Model):
     publisher = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True, related_name="articles")
     publish_date = models.DateTimeField(auto_now_add=True)
     image = models.ImageField(upload_to='article/image/', null=True, blank=True)
-    video = models.FileField(upload_to='article/video/', null=True, blank=True)
     slug = models.SlugField(unique=True, blank=True, null=True)
     
     def save(self, *args, **kwargs):

@@ -27,14 +27,37 @@
             {{ form.image }}
         </p>
 
-        <p>
-            {{ form.video.label_tag }}
-            {{ form.video }}
-        </p>
+        <div style="margin-top:10px;">
+            <img 
+                id="preview"
+                src="{% if form.instance.image %}{{ form.instance.image.url }}{% else %}#{% endif %}"
+                alt="Image preview"
+                style="max-width: 300px; {% if not form.instance.image %}display:none;{% endif %} border: 1px solid #ddd; padding: 5px;">
+        </div>
 
         <div class="create-actions">
             <button type="submit">Update Post</button>
         </div>
     </form>
 </div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    let input = document.getElementById("id_image");
+    let preview = document.getElementById("preview");
+
+    if (input) {
+        input.addEventListener("change", function(event) {
+            let file = event.target.files[0];
+            if (file) {
+                let reader = new FileReader();
+                reader.onload = function(e) {
+                    preview.src = e.target.result;
+                    preview.style.display = "block";
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    }
+});
+</script>
 {% endblock %}
